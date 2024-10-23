@@ -1,0 +1,209 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "ADF-ncpl-training"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+		},
+		"AzureDataLakeStorage2_serviceprincipal4u_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage2_serviceprincipal4u'"
+		},
+		"AzureDatabricks1_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks1'"
+		},
+		"AzureSynapseAnalytics1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSynapseAnalytics1'"
+		},
+		"Project1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'Project1'"
+		},
+		"lnkOnPrem_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'lnkOnPrem'"
+		},
+		"project1_ncpl_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'project1_ncpl'"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://storage1998de.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage2_serviceprincipal4u_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://serviceprincipal4u.dfs.core.windows.net/"
+		},
+		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "0313-222041-5tx4bnrc"
+		},
+		"AzureSynapseAnalytics1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "synapse-mod2.sql.azuresynapse.net"
+		},
+		"AzureSynapseAnalytics1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "project1"
+		},
+		"AzureSynapseAnalytics1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sqladminuser"
+		},
+		"Healthcare_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://raw.githubusercontent.com/"
+		},
+		"Project1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://storage1998de.dfs.core.windows.net/"
+		},
+		"lnkOnPrem_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "storage1998.database.windows.net"
+		},
+		"lnkOnPrem_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "malik"
+		},
+		"lnkOnPrem_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "muneeb"
+		},
+		"project1_ncpl_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "0925-032454-kl58rqr0"
+		},
+		"trigger_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/e3c6c246-8c93-4287-937b-d06c134eec19/resourceGroups/DE/providers/Microsoft.Storage/storageAccounts/storage1998de"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "ADF-ncpl-training_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureBlobStorage1_connectionString": {
+						"value": "[parameters('AzureBlobStorage1_connectionString')]"
+					},
+					"AzureDataLakeStorage1_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					},
+					"AzureDataLakeStorage2_serviceprincipal4u_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage2_serviceprincipal4u_accountKey')]"
+					},
+					"AzureDatabricks1_accessToken": {
+						"value": "[parameters('AzureDatabricks1_accessToken')]"
+					},
+					"AzureSynapseAnalytics1_password": {
+						"value": "[parameters('AzureSynapseAnalytics1_password')]"
+					},
+					"Project1_accountKey": {
+						"value": "[parameters('Project1_accountKey')]"
+					},
+					"project1_ncpl_accessToken": {
+						"value": "[parameters('project1_ncpl_accessToken')]"
+					},
+					"AzureDataLakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"AzureDataLakeStorage2_serviceprincipal4u_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage2_serviceprincipal4u_properties_typeProperties_url')]"
+					},
+					"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('AzureDatabricks1_properties_typeProperties_existingClusterId')]"
+					},
+					"AzureSynapseAnalytics1_properties_typeProperties_server": {
+						"value": "[parameters('AzureSynapseAnalytics1_properties_typeProperties_server')]"
+					},
+					"AzureSynapseAnalytics1_properties_typeProperties_database": {
+						"value": "[parameters('AzureSynapseAnalytics1_properties_typeProperties_database')]"
+					},
+					"AzureSynapseAnalytics1_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSynapseAnalytics1_properties_typeProperties_userName')]"
+					},
+					"Healthcare_properties_typeProperties_url": {
+						"value": "[parameters('Healthcare_properties_typeProperties_url')]"
+					},
+					"Project1_properties_typeProperties_url": {
+						"value": "[parameters('Project1_properties_typeProperties_url')]"
+					},
+					"project1_ncpl_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('project1_ncpl_properties_typeProperties_existingClusterId')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "ADF-ncpl-training_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"lnkOnPrem_password": {
+						"value": "[parameters('lnkOnPrem_password')]"
+					},
+					"lnkOnPrem_properties_typeProperties_server": {
+						"value": "[parameters('lnkOnPrem_properties_typeProperties_server')]"
+					},
+					"lnkOnPrem_properties_typeProperties_database": {
+						"value": "[parameters('lnkOnPrem_properties_typeProperties_database')]"
+					},
+					"lnkOnPrem_properties_typeProperties_userName": {
+						"value": "[parameters('lnkOnPrem_properties_typeProperties_userName')]"
+					},
+					"trigger_properties_typeProperties_scope": {
+						"value": "[parameters('trigger_properties_typeProperties_scope')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ADF-ncpl-training_ArmTemplate_0')]"
+			]
+		}
+	]
+}

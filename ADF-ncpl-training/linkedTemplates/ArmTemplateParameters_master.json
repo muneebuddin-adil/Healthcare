@@ -1,0 +1,78 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ADF-ncpl-training"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage2_serviceprincipal4u_accountKey": {
+			"value": ""
+		},
+		"AzureDatabricks1_accessToken": {
+			"value": ""
+		},
+		"AzureSynapseAnalytics1_password": {
+			"value": ""
+		},
+		"Project1_accountKey": {
+			"value": ""
+		},
+		"lnkOnPrem_password": {
+			"value": ""
+		},
+		"project1_ncpl_accessToken": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://storage1998de.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage2_serviceprincipal4u_properties_typeProperties_url": {
+			"value": "https://serviceprincipal4u.dfs.core.windows.net/"
+		},
+		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+			"value": "0313-222041-5tx4bnrc"
+		},
+		"AzureSynapseAnalytics1_properties_typeProperties_server": {
+			"value": "synapse-mod2.sql.azuresynapse.net"
+		},
+		"AzureSynapseAnalytics1_properties_typeProperties_database": {
+			"value": "project1"
+		},
+		"AzureSynapseAnalytics1_properties_typeProperties_userName": {
+			"value": "sqladminuser"
+		},
+		"Healthcare_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com/"
+		},
+		"Project1_properties_typeProperties_url": {
+			"value": "https://storage1998de.dfs.core.windows.net/"
+		},
+		"lnkOnPrem_properties_typeProperties_server": {
+			"value": "storage1998.database.windows.net"
+		},
+		"lnkOnPrem_properties_typeProperties_database": {
+			"value": "malik"
+		},
+		"lnkOnPrem_properties_typeProperties_userName": {
+			"value": "muneeb"
+		},
+		"project1_ncpl_properties_typeProperties_existingClusterId": {
+			"value": "0925-032454-kl58rqr0"
+		},
+		"trigger_properties_typeProperties_scope": {
+			"value": "/subscriptions/e3c6c246-8c93-4287-937b-d06c134eec19/resourceGroups/DE/providers/Microsoft.Storage/storageAccounts/storage1998de"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
